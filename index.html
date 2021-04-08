@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+     body {
+  background: #3a3a3a;
+}
+#form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+#input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem ; ; }
+#input:focus { outline: none; }
+#form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }     
+#typing{
+  color: #FFFFFF;
+  margin-left: 40vw;
+}
+.bubble-wrap {
+  width: 80%;
+  margin: 20px auto; 
+}
+#bubbles{
+  overflow-y:auto;
+  height: 90vh;
+
+}
+.bubble {
+  position: relative;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: #7F7F7F solid 1px;
+  font-size: 1em;
+  line-height: 1.25em;
+  word-wrap: break-word;
+}
+
+.bubble.left:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 16px 16px 0;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 0;
+  left: -16px;
+  top: 50%;
+  margin-top: -16px;
+}
+
+.bubble.right:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 16px 0 16px 16px;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 0;
+  right: -16px;
+  top: 50%;
+  margin-top: -16px;
+}
+
+@media screen and (max-width: 400px) {
+  .bubble-wrap {
+  width: 80%;
+  margin: 20px auto; 
+}
+  .bubble {
+  font-size: 3em;
+}
+#input{
+   font-size: 3em;
+    border: none; 
+   padding: 0 1rem;
+    flex-grow: 1; 
+    border-radius: 2rem; 
+    margin: 0.25rem ;  }
+    
+#form > button {
+  font-size: 3em;
+   padding: 0 1rem; 
+   margin: 0.25rem;
+   border-radius: 3px; } 
+
+}
+    
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+      <div id="bubbles">
+        <div class="bubble-wrap">
+          <div class="bubble left">
+            <b>Welcome to the server!</b><br>
+             Everybody ishhhhhhidentical in their secret unspoken belief that way deep down they are different from everyone else.   
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div id="form">
+      <textarea id="input" type="text" placeholder="write here"></textarea>
+      </div>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/client.js"></script>
+  </body>
+</html>
