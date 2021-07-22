@@ -1,0 +1,16 @@
+
+<ul class="list-group" id="listID">
+    <button type="button" class="list-group-item list-group-item-action bg-warning">
+        <b>Global room</b><br>
+        <p><%=users %> online</p>
+      </button>
+      <% userList.forEach(function(user){ %>
+        <button type="button" name ='user' class="list-group-item list-group-item-action">
+            <b><%= user.name%></b><br>
+            <input class="person" 
+                   id="<%=user._id %>" 
+                   name="<%=user.name %>"  
+                   placeholder="Send a private">
+          </button>
+    <% }); %>
+</ul>
