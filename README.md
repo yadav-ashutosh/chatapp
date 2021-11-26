@@ -10,6 +10,6 @@ This was made using socket.io and nodejs.
 
 How to test on localhost?
 - Clone the repo in your system
-- Perform an "npm istall" in the terminal
+- Perform an "npm install" in the terminal
 - Perform "node index" command in the terminal
 - Your server is now ready on localhost:3000!! You can also chat privately with the active users or in the global room provided 
